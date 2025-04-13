@@ -26,10 +26,10 @@ def get_best_students(*, students: list[dict]) -> list[dict]:
         elif average_grade == highest_avg:
             best_students.append(student)
 
-    # return best_students
-    result = "Best students are: "
-    bs_names = [f"{bs["name"]} {bs["surname"]}" for bs in best_students]
-    return result + ", ".join(bs_names)
+    return best_students
+    # result = "Best students are: "
+    # bs_names = [f"{bs["name"]} {bs["surname"]}" for bs in best_students]
+    # return result + ", ".join(bs_names)
 
 
 print(get_best_students(students=students))

@@ -39,22 +39,14 @@ def play_martingale(*, starting_funds: int, min_bet: int, max_bet: int) -> int:
 # print(play_martingale(starting_funds=100, min_bet=1, max_bet=100))
 
 
-def simulate_martingale_for_n_players(
-    *, starting_funds: int, min_bet: int, max_bet: int, n_games: int
-) -> float:
+def simulate_martingale_for_n_players(*, starting_funds: int, min_bet: int, max_bet: int, n_games: int) -> float:
     total_steps_to_loose = 0
 
     for i in range(n_games):
-        steps_to_loose = play_martingale(
-            starting_funds=starting_funds, min_bet=min_bet, max_bet=max_bet
-        )
+        steps_to_loose = play_martingale(starting_funds=starting_funds, min_bet=min_bet, max_bet=max_bet)
         total_steps_to_loose += steps_to_loose
 
     return total_steps_to_loose / n_games
 
 
-print(
-    simulate_martingale_for_n_players(
-        starting_funds=1000, min_bet=1, max_bet=100, n_games=10
-    )
-)
+print(simulate_martingale_for_n_players(starting_funds=1000, min_bet=1, max_bet=100, n_games=10))
